@@ -1,0 +1,39 @@
+---
+import HeroCard from "./HeroCard.astro";
+---
+
+<section class="flex flex-col justify-evenly w-full h-40% bg-[#1B4583] items-center py-12 text-amber-50 gap-9">
+    <h1 class="font-bold text-5xl text-center">¡Forma parte de SoftLab!</h1>
+    <div class="flex flex-row justify-center align-middle w-4/5 text-amber-50 text-center gap-6">
+        <HeroCard logo="/check_logo.svg" titulo="ESTUDIA E IMPACATA" contenido="Resuelve problemáticas reales."/>
+        <HeroCard logo="/project_logo.svg" titulo="ESTUDIA E IMPACATA" contenido="Resuelve problemáticas reales."/>
+        <HeroCard logo="/clock_logo.svg" titulo="ESTUDIA E IMPACATA" contenido="Resuelve problemáticas reales."/>
+    </div>
+    <button class="bg-[#FFA600] rounded-2xl h-16 w-80 flex justify-center items-center text-center">
+        Conoce más
+    </button>
+
+</section>
+<footer class="w-full flex flex-col items-center justify-between">
+    <div class="text-[#1B4583] w-full items-center flex justify-evenly py-5 shadow">
+        <h1 class="font-bold text-5xl">CONTACTO</h1>
+    </div>
+    <div class="text-[#1B4583] flex gap-5 py-5 w-full justify-evenly px-5 items-center align-middle">
+        <img class="h-16 w-auto" src="/uni_logo_azul.png" alt="Logo universidad">
+        <div class="flex flex-col align-middle text-center w-fit h-full justify-evenly gap-2">
+            <h3 class="font-semibold">Ubicación</h3>
+            <p>Calle 5 No. 3-85 Popayán, Colombia</p>
+            <div class="flex justify-evenly">
+                <img src="/ig_logo.svg" alt="Instagram">
+                <img src="wts_logo.svg" alt="WhatApp">
+                <img src="lk_logo.svg" alt="LinkedIn">
+            </div>
+        </div>
+        <div class="flex flex-col text-center gap-2">
+            <h3 class="font-semibold">Enlaces de interés</h3>
+            <a href="">Directorio telefónico</a>
+            <a href="">Información de sedes</a>
+        </div>
+        <img class="h-16 w-auto align-middle" src="/softlab_logo.png" alt="Logo softlab">
+    </div>
+</footer>
