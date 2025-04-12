@@ -1,0 +1,14 @@
+---
+const { imagen = "Default", autor="Default", titulo = "Default", contenido = "Default" } = Astro.props;
+
+---
+
+<div class="w-96 h-2/12 flex flex-col justify-evenly gap-3 p-8">
+    <img src={imagen} alt="Imagen">
+    <p class="text-amber-400 font-bold">{autor}</p>
+    <h3 class="font-bold">{titulo}</h3>
+    <p>{contenido}.</p>
+    <button class="bg-[#1B4583] text-amber-50 rounded-2xl h-16 w-full flex justify-center items-center text-center">
+        Conoce más
+    </button>
+</div>
