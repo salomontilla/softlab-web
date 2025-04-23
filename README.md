@@ -1,38 +1,19 @@
-# Astro Starter Kit: Basics
+# SoftLab web
+**SoftLab** es una plataforma web orientada a la gestión y visualización de proyectos de software desarrollados por estudiantes universitarios como parte de su proceso de grado bajo la modalidad de **registro de software**.
+
+## 🌐 Tecnologías utilizadas
+
+- [Astro](https://astro.build/) – Framework web moderno
+- [Tailwind CSS](https://tailwindcss.com/) – Estilos rápidos con clases utilitarias
+- HTML + CSS personalizado
+- [Figma](https://figma.com) – Para diseño de interfaz
+
+# Instalación Astro
 
 ```sh
-npm create astro@latest -- --template basics
+npm create astro@latest
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
+## 🧞 Comandos basicos Astro
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
@@ -42,7 +23,54 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
+# 🎨 Instalación de Tailwind CSS + Montserrat en Astro
+```bash
+npm install -D tailwindcss
+npm install @fontsource-variable/montserrat
+```
+## En el archivo global.css
+```bash
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+## En el archivo donde quieras usar tailwind
+```bash
+import './src/styles/global.css'
+```
+## En el global.css para usar la fuente
+```bash
+@theme{
+    --font-montserrat: 'Montserrat Variable', sans-serif;
+}
+```
 
-## 👀 Want to learn more?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 🚀 Estructura del proyecto
+
+```
+softlab/
+├── public/
+│   └── logos/               # Archivos estáticos: logos, imágenes, íconos, etc.
+│
+├── styles/
+│   └── global.css           # Estilos globales del sitio
+│
+├── components/              # Componentes reutilizables de la interfaz
+│   ├── Contacto.astro       # Sección de contacto final
+│   ├── Cta.astro            # Call to Action fuerte al final de la página
+│   ├── Footer.astro         # Footer principal con enlaces y datos
+│   ├── Header.astro         # Encabezado con navegación principal
+│   ├── Hero.astro           # Sección inicial (Hero principal)
+│   ├── HeroCard.astro       # Tarjetas informativas dentro del Hero o valores
+│   ├── ProjectCard.astro    # Tarjeta individual de proyecto destacado
+│   └── Proyectos.astro      # Contenedor para la galería de proyectos
+│
+├── layouts/
+│   └── Layout.astro         # Layout base que estructura la página (header/footer global)
+│
+├── pages/
+│   └── index.astro          # Página principal del sitio (landing page)
+│
+└── README.md (o documentación)
+```
