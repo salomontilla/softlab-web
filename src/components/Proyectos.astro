@@ -6,11 +6,14 @@ import ProjectCard from "./ProjectCard.astro";
         <h1 class="text-5xl font-bold">Proyectos destacados.</h1>
         <p class="text-2xl font-light">Cada proyecto es el resultado del esfuerzo de estudiantes que hicieron del software un camino para graduarse y dejar huella.</p>
     </header>
-        <div class="w-full h-fit flex justify-center">
+    <div class="w-full px-20 ">
+        <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ">
             <ProjectCard imagen="/img_ejemplo.jpg" autor="Nombre del autor" titulo="Nombre del proyecto" contenido="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos, amet tempore quia vitae neque non molestias hic. Consectetur, veritatis sit? Laborum quis adipisci nesciunt porro, mollitia repudiandae exercitationem temporibus voluptatibus."/>
             <ProjectCard imagen="/img_ejemplo.jpg" autor="Nombre del autor" titulo="Nombre del proyecto" contenido="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos, amet tempore quia vitae neque non molestias hic. Consectetur, veritatis sit? Laborum quis adipisci nesciunt porro, mollitia repudiandae exercitationem temporibus voluptatibus."/>
             <ProjectCard imagen="/img_ejemplo.jpg" autor="Nombre del autor" titulo="Nombre del proyecto" contenido="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos, amet tempore quia vitae neque non molestias hic. Consectetur, veritatis sit? Laborum quis adipisci nesciunt porro, mollitia repudiandae exercitationem temporibus voluptatibus."/>
         </div>
+        
+    </div>
     
     <footer class="flex flex-col mb-3 text-center px-20">
         <img class="h-14 w-auto mx-auto" src="/medal_logo.svg" alt="Logo medalla">
