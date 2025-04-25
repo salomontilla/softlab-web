@@ -4,7 +4,6 @@ import ProjectCard from "./ProjectCard.astro";
 import { getCollection } from "astro:content";
 
 const proyectos = await getCollection('proyectos')
-console.log(proyectos)
 ---
 <section id="proyectos" class="w-full h-fit flex flex-col items-center justify-between">
     <header class="w-full h-fit px-8 md:px-28 py-8 bg-[#1B4583] flex flex-col text-amber-50 gap-y-2.5 justify-center items-start">
