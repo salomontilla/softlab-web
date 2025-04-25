@@ -13,6 +13,7 @@ const proyectos = defineCollection({
         }),
         img_producto: z.string(),
         nombre_producto: z.string(),
+        descripcion: z.string(),
         tecnologias: z.object({
             java: z.string(),
             html: z.string(),
