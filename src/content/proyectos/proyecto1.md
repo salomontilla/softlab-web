@@ -1,6 +1,6 @@
 ---
 img_autor: /persona.jpg
-autor: salomon
+autor: Salomon Montilla Luna
 programa: Nombre del programa
 modalidad: registro de software
 social:
