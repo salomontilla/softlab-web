@@ -4,9 +4,9 @@ autor: salomon
 programa: Nombre del programa
 modalidad: registro de software
 social:
-    linkedIn: https://www.linkedin.com/
-    github: https://github.com/
-    facebook: https://www.facebook.com/
+    lk_logo: https://www.linkedin.com/
+    logo_fc: https://github.com/
+    logo_github: https://www.facebook.com/
 img_producto: img_ejemplo.jpg
 nombre_producto: Nombre del producto
 descripcion: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac nisl sapien. In in aliquet nisi. Fusce sit amet volutpat enim. Praesent condimentum justo magna, et sodales nibh accumsan nec.

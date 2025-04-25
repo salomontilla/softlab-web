@@ -6,20 +6,11 @@ const proyectos = defineCollection({
         autor: z.string(),
         programa: z.string(),
         modalidad: z.string(),
-        social:z.object({
-            linkedIn: z.string().url(),
-            github: z.string().url(),
-            facebook: z.string().url(),
-        }),
+        social: z.record(z.string(), z.string()),
         img_producto: z.string(),
         nombre_producto: z.string(),
         descripcion: z.string(),
-        tecnologias: z.object({
-            java: z.string(),
-            html: z.string(),
-            laravel: z.string(),
-            css: z.string()
-        }),
+        tecnologias: z.record(z.string(), z.string()),
     })
 })
 export const collections = {proyectos}

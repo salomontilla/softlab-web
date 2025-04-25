@@ -1,13 +1,38 @@
 ---
-const { imagen = "Default", autor="Default", titulo = "Default", contenido = "Default", slug = "Default" } = Astro.props;
+const {
+  img_autor = "default.jpg",
+  autor = "Autor Desconocido",
+  programa = "Programa Desconocido",
+  modalidad = "Modalidad Desconocida",
+  img_producto = "producto.jpg",
+  nombre_producto = "Nombre del Producto",
+  descripcion = "Descripción no disponible.",
+  slug = "#",
+  tecnologias = [],
+  social = [],
+} = Astro.props;
+
+interface ProjectCardProps {
+  img_autor: string;
+  autor: string;
+  programa: string;
+  modalidad: string;
+  img_producto: string;
+  nombre_producto: string;
+  descripcion: string;
+  slug: string;
+  tecnologias: [string, string][]; // [nombre, rutaLogo]
+  social: [string, string][]; // [red, link]
+}
+console.log(social)
 
 ---
 
 <div class="w-full max-w-sm md:max-w-md aspect-auto h-auto flex flex-col justify-evenly gap-3 p-8">
-    <img src={imagen} alt="Imagen">
+    <img src={img_producto} alt="Imagen">
     <p class="text-amber-400 font-bold">{autor}</p>
-    <h3 class="font-bold">{titulo}</h3>
-    <p>{contenido}.</p>
+    <h3 class="font-bold">{nombre_producto}</h3>
+    <p>{descripcion}.</p>
     
 
 <!-- Modal toggle -->
@@ -18,30 +43,43 @@ const { imagen = "Default", autor="Default", titulo = "Default", contenido = "De
 </button>
 
 <!-- Main modal -->
-<div id="detalles-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+<div id="detalles-modal" tabindex="-1" aria-hidden="true" class="visible overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
     <div class="relative p-4 w-full max-w-2xl max-h-full">
         <!-- Modal content -->
-        <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
-            <!-- Modal header -->
-            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                    Terms of Service
-                </h3>
+        <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700 flex flex-row">
+            <!-- Modal left -->
+            <div class="flex flex-col items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
+                <img src={img_autor} alt=`${slug}`>
+                <p>Programa</p>
+                <p>{programa}</p>
+                <p>Modalidad de grado</p>
+                <p>{modalidad}</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+                    <!-- Muestra dinamicamente los links a la paginas -->
+                    {
+                        social.map(([red, link]) => (
+                          <a href={link} target="_blank" rel="noopener noreferrer">
+                            <img 
+                              src= `${red}.svg` 
+                              alt={red} 
+                              class="transition transform duration-300 hover:scale-105 w-6 h-6"
+                            />
+                          </a>
+                        ))
+                      }      
+
+                </div>
                 <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="detalles-modal">
                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                     </svg>
                     <span class="sr-only">Close modal</span>
                 </button>
+               
             </div>
             <!-- Modal body -->
             <div class="p-4 md:p-5 space-y-4">
-                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                    With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
-                </p>
-                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
-                </p>
+                
             </div>
             <!-- Modal footer -->
             <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
