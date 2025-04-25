@@ -19,7 +19,7 @@ console.log(proyectos)
                     const {img_producto, autor, nombre_producto, descripcion} = data
 
                     return (
-                        <ProjectCard imagen= `/${img_producto}` autor = {autor} titulo={nombre_producto} contenido={descripcion}/>
+                        <ProjectCard imagen= `/${img_producto}` autor = {autor} titulo={nombre_producto} contenido={descripcion} slug={slug}/>
                     )
                 })
             }
