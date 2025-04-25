@@ -46,15 +46,15 @@ console.log(social)
 <div id="detalles-modal" tabindex="-1" aria-hidden="true" class="visible overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
     <div class="relative p-4 w-full max-w-2xl max-h-full">
         <!-- Modal content -->
-        <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700 flex flex-row">
+        <div class="relative Z rounded-lg shadow-sm dark:bg-gray-700 flex flex-row">
             <!-- Modal left -->
-            <div class="flex flex-col items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
-                <img src={img_autor} alt=`${slug}`>
-                <p>Programa</p>
+            <div class="flex flex-col items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 bg-[#1B4583] text-amber-50 gap-y-7">
+                <img src={img_autor} alt=`${slug}` class="h-24 w-auto rounded-full object-cover border-2 border-white shadow">
+                <p class="font-bold">Programa</p>
                 <p>{programa}</p>
-                <p>Modalidad de grado</p>
+                <p class="font-bold">Modalidad de grado</p>
                 <p>{modalidad}</p>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
                     <!-- Muestra dinamicamente los links a la paginas -->
                     {
                         social.map(([red, link]) => (
@@ -62,19 +62,20 @@ console.log(social)
                             <img 
                               src= `${red}.svg` 
                               alt={red} 
-                              class="transition transform duration-300 hover:scale-105 w-6 h-6"
+                              class="transition transform duration-300 hover:scale-105 w-auto h-12"
                             />
                           </a>
                         ))
                       }      
 
                 </div>
-                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="detalles-modal">
+                <!-- <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="detalles-modal">
                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                     </svg>
                     <span class="sr-only">Close modal</span>
-                </button>
+                </button> -->
+                
                
             </div>
             <!-- Modal body -->

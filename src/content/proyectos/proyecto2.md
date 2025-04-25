@@ -4,7 +4,7 @@ autor: nombre del autor
 programa: Nombre del programa
 modalidad: registro de software
 social:
-    lk_logo: https://www.linkedin.com/
+    logo_lk_white: https://www.linkedin.com/
     logo_github: https://github.com/
     logo_fc: https://www.facebook.com/
 img_producto: img_ejemplo.jpg
