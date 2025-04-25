@@ -1,7 +1,7 @@
 ---
 img_autor: /persona.jpg
-autor: nombre del autor
-programa: Nombre del programa
+autor: Juan Montilla Luna
+programa: Ingenieria electronica
 modalidad: registro de software
 social:
     logo_lk_white: https://www.linkedin.com/
