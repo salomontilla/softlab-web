@@ -2,7 +2,7 @@
 import Navbar from "./Navbar.astro"
 import HeroCard from "./HeroCard.astro"
 ---
-<section class="w-full h-auto lg:h-screen bg-cover bg-center relative " style="background-image: url('./elab.jpg')">
+<section class="w-full h-auto md:h-auto lg:h-screen bg-cover bg-center relative " style="background-image: url('./elab.jpg')">
     <div class="h-full inset-0 bg-blue-900/60 z-0 flex flex-col items-center gap-5">
         <Navbar />
         <div class="flex flex-col align-middle w-4/5 text-amber-50 text-center gap-5">
@@ -13,7 +13,7 @@ import HeroCard from "./HeroCard.astro"
               <h3 class="font-light text-base sm:text-lg md:text-xl lg:text-2xl">
                 Nos dedicamos a desarrollar sistemas informáticos para negocios, automatizando sus procesos.
               </h3>
-            <div class="grid grid-cols-2 lg:grid-cols-4 justify-center gap-3 place-items-center">
+            <div class="grid grid-cols-2 lg:grid-cols-4 justify-center gap-3 place-items-center my-5">
                 <HeroCard logo="./dev_logo.svg" titulo="SOFTLAB" contenido="Donde las ideas se transforman en aprendizaje e innovación."/>
                 <HeroCard logo="./rocket_logo.svg" titulo="TALENTO" contenido="Impulsamos el talento universitario en desarrollo, innovación y tecnología."/>
                 <HeroCard logo="./accion_logo.svg" titulo="ACCION" contenido="Cada proyecto es evidencia del aprendizaje real en el aula."/>
