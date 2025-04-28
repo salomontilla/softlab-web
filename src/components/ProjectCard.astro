@@ -40,7 +40,7 @@ console.log(autor)
             <div class="relative Z rounded-lg shadow-sm bg-amber-50 flex flex-row text-center">
                 <!-- Left side -->
                 <div class=" text-center flex flex-col items-center justify-between border-b rounded-t dark:border-gray-600 bg-[#1B4583] text-amber-50 gap-y-7 min-w-72 p-7  lg:p-10 md:p-10">
-                    <img src={img_autor} alt=`${slug}` class="h-24 w-auto rounded-full object-cover border-2 border-white shadow">
+                    <img src=`./${img_autor}` alt=`${slug}` class="h-24 w-auto rounded-full object-cover border-2 border-white shadow">
                     <p class="text-xl font-bold ">{autor}</p>
                     <p class="font-bold">Programa</p>
                     <p>{programa}</p>
@@ -52,7 +52,7 @@ console.log(autor)
                             social.map(([red, link]) => (
                             <a href={link} target="_blank" rel="noopener noreferrer">
                                 <img 
-                                src= `${red}.svg` 
+                                src= `./${red}.svg` 
                                 alt={red} 
                                 class="transition transform duration-300 hover:scale-105 w-auto h-12"
                                 />
@@ -75,7 +75,7 @@ console.log(autor)
                         {
                             tecnologias.map(([nombre, src]) => (
                                 <img 
-                                src= {src} 
+                                src= `./${src}` 
                                 alt={nombre} 
                                 class="transition transform duration-300 hover:scale-105 w-auto h-12"
                                 />
