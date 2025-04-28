@@ -10,7 +10,7 @@ const proyectos = await getCollection('proyectos')
         <h1 class="text-5xl font-bold">Proyectos destacados.</h1>
         <p class="text-2xl font-light">Cada proyecto es el resultado del esfuerzo de estudiantes que hicieron del software un camino para graduarse y dejar huella.</p>
     </header>
-    <div class="w-full px-20 ">
+    <div class="w-full px-10 md:px-14 lg:px-24 ">
         <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {
                 proyectos.map(proyecto => {
@@ -28,8 +28,8 @@ const proyectos = await getCollection('proyectos')
         
     </div>
     
-    <footer class="flex flex-col mb-3 text-center px-20">
+    <footer class="flex flex-col mb-3 text-center max-w-[80%]">
         <img class="h-14 w-auto mx-auto" src="./medal_logo.svg" alt="Logo medalla">
-        <p class="text-2xl font-light">Estos proyectos son evidencia del compromiso, la creatividad y el talento de nuestros estudiantes en su proceso de formación profesional.</p>
+        <p class=" font-light text-base sm:text-lg md:text-lg lg:text-xl xl:text-3xl">Estos proyectos son evidencia del compromiso, la creatividad y el talento de nuestros estudiantes en su proceso de formación profesional.</p>
     </footer>
 </section>
