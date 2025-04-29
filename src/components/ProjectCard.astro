@@ -11,12 +11,9 @@ const {
   tecnologias = [],
   social = [],
 } = Astro.props;
-
-console.log(autor)
-
 ---
 
-<div class="w-full max-w-sm md:max-w-md  min-h-[600px]  flex flex-col justify-evenly gap-3 p-8">
+<div class="w-full  min-h-[600px]  flex flex-col justify-evenly gap-3 p-8">
     <img src={img_producto} alt="Imagen">
     <p class="text-amber-400 font-bold">{autor}</p>
     <h3 class="font-bold">{nombre_producto}</h3>

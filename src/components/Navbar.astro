@@ -1,0 +1,89 @@
+---
+import '../styles/global.css'
+---
+<!--
+	<header class="relative  min-w-[60%] h-18 flex justify-center align-middle shadow mt-5">
+		<nav class="w-full flex justify-evenly items-center bg-gradient-to-r from-[#1B4583]/60 to-[#060F1D]/70 p-6 rounded-2xl text-amber-50">
+				<img src="./logo_uniautonoma.png" alt="Logo universidad" class="h-16 w-auto" />
+				<a href="#inicio" class="text-amber-50 font-semibold transition transform duration-300 hover:scale-110">Inicio</a>
+				<a href="#proyectos" class="text-amber-50 font-semibold transition transform duration-300 hover:scale-110">Proyectos</a>
+				<a href="#cta" class="text-amber-50 font-semibold transition transform duration-300 hover:scale-110">Contacto</a>
+				<img src="./softlab_logo.png" alt="Logo SoftLab" class="h-15 w-auto" />
+		</nav>
+	</header>
+
+<header class="relative min-w-[60%] h-18 flex align-middle shadow mt-5 bg-gradient-to-r from-[#1B4583]/60 to-[#060F1D]/70 rounded-2xl"> 
+	<nav class="flex justify-evenly items-center w-[100%] mx-auto">
+	  <div>
+		<img src="./logo_uniautonoma.png" alt="Logo universidad" class="h-16 w-auto" />
+	  </div>
+	  <div id="nav-links"
+		class=" duration-500 absolute md:static md:min-h-fit min-h-fit top-[-100vh] md:w-auto w-full flex justify-center items-center bg-gradient-to-r from-[#1B4583]/60 to-[#060F1D]/70">
+		<ul class="flex items-center text-center md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
+		  <li><a href="#inicio" class="text-amber-50 font-semibold transition transform duration-300 hover:scale-110">Inicio</a></li>
+		  <li><a href="#proyectos" class="text-amber-50 font-semibold transition transform duration-300 hover:scale-110">Proyectos</a></li>
+		  <li><a href="#cta" class="text-amber-50 font-semibold transition transform duration-300 hover:scale-110">Contacto</a></li>
+		</ul>
+	  </div>
+	  <ion-icon id="menu-button" name="menu-outline" class="text-3xl cursor-pointer md:hidden text-amber-50"></ion-icon>
+	  <img src="./softlab_logo.png" alt="Logo SoftLab" class="h-16 w-auto" />
+	</nav>
+  </header>
+  
+  <script>
+	const navLinks = document.getElementById("nav-links");
+	const menuIcon = document.getElementById("menu-icon");
+  
+	menuIcon.addEventListener("click", () => {
+	  const isOpen = navLinks.classList.contains("top-[72px]");
+	  navLinks.classList.toggle("top-[72px]");
+	  navLinks.classList.toggle("top-[-100vh]");
+	  menuIcon.name = isOpen ? "menu-outline" : "close";
+	});
+  </script>
+-->
+<header class="relative min-w-[60%] h-18 flex align-middle shadow mt-5 md:px-20 rounded-t-2xl md:rounded-2xl bg-gradient-to-r from-[#1B4583]/60 to-[#060F1D]/70"> 
+	<nav class="flex flex-row justify-evenly items-center w-full mx-auto relative">
+	  
+	  <!-- Logo Universidad -->
+		<img src="./logo_uniautonoma.png" alt="Logo universidad" class="h-16 w-auto" />
+  
+	  <!-- Menú de Navegación -->
+	  <div id="nav-links" 
+		class="origin-top w-full absolute md:static md:min-h-fit min-h-fit left-1/2 transform -translate-x-1/2 md:translate-x-0 md:left-auto md:top-auto flex flex-col md:flex-row justify-center items-center gap-8 md:bg-transparent rounded-b-xl p-4 opacity-0 md:opacity-100 scale-95 pointer-events-none md:pointer-events-auto transition-all ease-in-out">
+		<ul class="flex flex-col md:flex-row md:items-center md:gap-[4vw] gap-6 text-center">
+		  <li><a href="#inicio" class="text-amber-50 font-semibold transition transform duration-300 hover:scale-110">Inicio</a></li>
+		  <li><a href="#proyectos" class="text-amber-50 font-semibold transition transform duration-300 hover:scale-110">Proyectos</a></li>
+		  <li><a href="#cta" class="text-amber-50 font-semibold transition transform duration-300 hover:scale-110">Contacto</a></li>
+		</ul>
+	  </div>
+  
+	  <!-- Botón de Menú (Hamburguesa) -->
+	  <div class="flex items-center gap-4">
+		<ion-icon id="menu-button" name="menu-outline" class="text-3xl cursor-pointer md:hidden text-amber-50"></ion-icon>
+	  </div>
+	<img src="./softlab_logo.png" alt="Logo SoftLab" class="h-16 w-auto" />
+  
+	</nav>
+  </header>
+  
+  <script>
+	const menuButton = document.getElementById('menu-button');
+	const navLinks = document.getElementById('nav-links');
+  
+	let isOpen = false;
+  
+	menuButton.addEventListener('click', () => {
+	  isOpen = !isOpen;
+  
+	  if (isOpen) {
+		menuButton.setAttribute('name', 'close-outline');
+		navLinks.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+		navLinks.classList.add('top-[100%]', 'opacity-100', 'scale-100', 'pointer-events-auto', 'bg-gradient-to-r', 'from-[#1B4583]/60', 'to-[#060F1D]/70');
+	  } else {
+		menuButton.setAttribute('name', 'menu-outline');
+		navLinks.classList.remove('top-[100%]', 'opacity-100', 'scale-100', 'pointer-events-auto','bg-gradient-to-r', 'from-[#1B4583]/60', 'to-[#060F1D]/70');
+		navLinks.classList.add('top-[-100vh]', 'opacity-0', 'scale-95', 'pointer-events-none');
+	  }
+	});
+  </script>
