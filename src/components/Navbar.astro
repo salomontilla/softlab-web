@@ -42,17 +42,15 @@ import '../styles/global.css'
 	});
   </script>
 -->
-<header class="relative min-w-[60%] h-18 flex align-middle shadow mt-5 bg-gradient-to-r from-[#1B4583]/60 to-[#060F1D]/70 rounded-t-2xl md:rounded-2xl "> 
+<header class="relative min-w-[60%] h-18 flex align-middle shadow mt-5 rounded-t-2xl md:rounded-2xl bg-gradient-to-r from-[#1B4583]/60 to-[#060F1D]/70"> 
 	<nav class="flex justify-evenly items-center w-full mx-auto relative">
 	  
 	  <!-- Logo Universidad -->
-	  <div>
 		<img src="./logo_uniautonoma.png" alt="Logo universidad" class="h-16 w-auto" />
-	  </div>
   
 	  <!-- Menú de Navegación -->
 	  <div id="nav-links" 
-		class="origin-top w-full duration-300 absolute md:static md:min-h-fit min-h-fit top-[-100vh] left-1/2 transform -translate-x-1/2 md:translate-x-0 md:left-auto md:top-auto md:transform-none md:w-auto flex flex-col md:flex-row justify-center items-center gap-8 bg-gradient-to-r from-[#1B4583]/60 to-[#060F1D]/70 md:bg-red rounded-b-xl p-4 opacity-0 md:opacity-100 scale-95 md:scale-100 pointer-events-none md:pointer-events-auto transition-all ease-in-out">
+		class="origin-top w-full absolute md:static md:min-h-fit min-h-fit left-1/2 transform -translate-x-1/2 md:translate-x-0 md:left-auto md:top-auto md:w-auto flex flex-col md:flex-row justify-center items-center gap-8 md:bg-transparent rounded-b-xl p-4 opacity-0 md:opacity-100 scale-95 pointer-events-none md:pointer-events-auto transition-all ease-in-out">
 		<ul class="flex flex-col md:flex-row md:items-center md:gap-[4vw] gap-6 text-center">
 		  <li><a href="#inicio" class="text-amber-50 font-semibold transition transform duration-300 hover:scale-110">Inicio</a></li>
 		  <li><a href="#proyectos" class="text-amber-50 font-semibold transition transform duration-300 hover:scale-110">Proyectos</a></li>
@@ -80,11 +78,11 @@ import '../styles/global.css'
   
 	  if (isOpen) {
 		menuButton.setAttribute('name', 'close-outline');
-		navLinks.classList.remove('top-[-100vh]', 'opacity-0', 'scale-95', 'pointer-events-none');
-		navLinks.classList.add('top-[100%]', 'opacity-100', 'scale-100', 'pointer-events-auto');
+		navLinks.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+		navLinks.classList.add('top-[100%]', 'opacity-100', 'scale-100', 'pointer-events-auto', 'bg-gradient-to-r', 'from-[#1B4583]/60', 'to-[#060F1D]/70');
 	  } else {
 		menuButton.setAttribute('name', 'menu-outline');
-		navLinks.classList.remove('top-[100%]', 'opacity-100', 'scale-100', 'pointer-events-auto');
+		navLinks.classList.remove('top-[100%]', 'opacity-100', 'scale-100', 'pointer-events-auto','bg-gradient-to-r', 'from-[#1B4583]/60', 'to-[#060F1D]/70');
 		navLinks.classList.add('top-[-100vh]', 'opacity-0', 'scale-95', 'pointer-events-none');
 	  }
 	});
