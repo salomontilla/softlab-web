@@ -34,7 +34,7 @@ const {
      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative p-4 w-full max-w-5xl max-h-full">
             <!-- Modal content -->
-            <div class="relative Z rounded-lg shadow-sm bg-amber-50 flex flex-row text-center">
+            <div class="relative Z rounded-lg shadow-sm bg-amber-50 flex flex-col md:flex-row text-center">
                 <!-- Left side -->
                 <div class=" text-center flex flex-col items-center justify-between border-b rounded-t dark:border-gray-600 bg-[#1B4583] text-amber-50 gap-y-7 min-w-72 p-7  lg:p-10 md:p-10">
                     <img src=`./${img_autor}` alt=`${slug}` class="h-24 w-auto rounded-full object-cover border-2 border-white shadow">
@@ -43,7 +43,7 @@ const {
                     <p>{programa}</p>
                     <p class="font-bold">Modalidad de grado</p>
                     <p>{modalidad}</p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 ">
+                    <div class="grid grid-cols-3 gap-5 ">
                         <!-- Muestra dinamicamente los links a la paginas -->
                         {
                             social.map(([red, link]) => (
@@ -68,7 +68,7 @@ const {
                     <p class="font-bold text-xl">{nombre_producto}</p>
                     <p class="text-left" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil blanditiis vero quisquam voluptatibus dolorum delectus aliquid facilis laboriosam, ipsam numquam velit, dolores consectetur non explicabo doloribus consequatur saepe corporis deleniti.</p>
                     <p class="font-bold">Tecnologias usadas</p>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-7">
+                    <div class="grid grid-cols-4 gap-7">
                         {
                             tecnologias.map(([nombre, src]) => (
                                 <img 
