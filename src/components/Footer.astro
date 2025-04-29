@@ -2,12 +2,16 @@
     <div class="text-[#1B4583] w-full items-center flex justify-evenly py-5 shadow">
         <h1 class="font-bold text-5xl">CONTACTO</h1>
     </div>
-    <div class="text-[#1B4583] flex gap-5 py-5 w-full justify-evenly  items-center align-middle">
-        <img class="h-16 w-auto" src="./uni_logo_azul.png" alt="Logo universidad">
+    <div class="text-[#1B4583] flex flex-col md:flex-row gap-5 py-5 w-full justify-evenly items-center align-middle">
+        <div class="flex gap-5 md:gap-0">
+            <img class="h-16 w-auto align-middle" src="./uni_logo_azul.png" alt="Logo universidad">
+            <img class="h-16 w-auto align-middle md:hidden" src="./softlab_logo.png" alt="Logo softlab">
+        </div>
+        
         <div class="flex flex-col align-middle text-center w-fit h-full justify-evenly gap-2">
             <h3 class="font-semibold">Ubicación</h3>
             <p>Calle 5 No. 3-85 Popayán, Colombia</p>
-            <div class="grid grid-cols-3 sm:grid-cols-2 place-items-center">
+            <div class="grid grid-cols-3 place-items-center">
                 <a href="https://www.instagram.com/uniautonomadelcauca/" target="_blank">
                     <img src="./ig_logo.svg" alt="Instagram" class="h-10 w-auto cursor-pointer transition-transform duration-300 hover:scale-105" />
                 </a>
@@ -24,6 +28,8 @@
             <a href="https://www.uniautonoma.edu.co/institucion/directorio/contactanos" target="_blank" class="transition transform duration-300 hover:scale-105">Directorio telefónico</a>
             <a href="https://www.uniautonoma.edu.co/universidad/sedes" target="_blank" class="transition transform duration-300 hover:scale-105">Información de sedes</a>
         </div>
-        <img class="h-16 w-auto align-middle" src="./softlab_logo.png" alt="Logo softlab">
+        <div class="hidden md:flex">
+            <img class="h-16 w-auto align-middle" src="./softlab_logo.png" alt="Logo softlab">
+        </div>
     </div>
 </footer>
