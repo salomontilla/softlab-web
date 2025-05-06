@@ -1,32 +1,32 @@
 ---
 const {
-  img_autor = "default.jpg",
-  autor = "Autor Desconocido",
-  programa = "Programa Desconocido",
-  modalidad = "Modalidad Desconocida",
+  autores = [],
   img_producto = "producto.jpg",
   nombre_producto = "Nombre del Producto",
   descripcion = "Descripción no disponible.",
   slug = "#",
   tecnologias = [],
-  social = [],
 }: {
-  img_autor?: string;
-  autor?: string;
-  programa?: string;
-  modalidad?: string;
+    autores?: {
+    img_autor?: string;
+    autor?: string;
+    programa?: string;
+    modalidad?: string;
+    social?: [string, string][];
+  }[];
   img_producto?: string;
   nombre_producto?: string;
   descripcion?: string;
   slug?: string;
   tecnologias?: string[];
-  social?: [string, string][]; // 👈 Aquí defines que social es un array de tuplas [red, link]
 } = Astro.props;
 ---
 
 <div class="w-full  min-h-[600px]  flex flex-col justify-evenly gap-3 p-8">
     <img src={img_producto} alt="Imagen">
-    <p class="text-amber-400 font-bold">{autor}</p>
+    <p class="text-amber-400 font-bold truncate w-full">{autores.map(autor => {
+        autor.autor
+    })}</p>
     <h3 class="font-bold">{nombre_producto}</h3>
     <p>{descripcion}.</p>
 
@@ -48,7 +48,7 @@ const {
             <div class="relative Z rounded-lg shadow-sm bg-amber-50 flex flex-col md:flex-row text-center">
                 <!-- Left side -->
                 <div class=" text-center flex flex-col items-center justify-between rounded-t dark:border-gray-600 bg-[#1B4583] text-amber-50 gap-y-7 min-w-72 p-7  lg:p-10 md:p-10">
-                    <img src=`./${img_autor}` alt=`${slug}` class="h-24 w-auto rounded-full object-cover border-2 border-white shadow">
+                    <img src=`./${}` alt=`${slug}` class="h-24 w-auto rounded-full object-cover border-2 border-white shadow">
                     <p class="text-xl font-bold ">{autor}</p>
                     <p class="font-bold">Programa</p>
                     <p>{programa}</p>

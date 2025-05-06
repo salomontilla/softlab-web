@@ -14,16 +14,22 @@ const proyectos = await getCollection('proyectos')
         <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {
                 proyectos.map(proyecto => {
-                    const{slug, data} = proyecto
-                    const {img_autor, autor, programa, modalidad, social, img_producto, nombre_producto, descripcion, tecnologias} = data
-                    const tecnologiasArray = Object.entries(tecnologias); 
-                    const redesArray = Object.entries(social); 
-                    
-                    return (
-                        <ProjectCard img_autor={img_autor}` autor = {autor} programa={programa} modalidad={modalidad} social={redesArray} img_producto = {img_producto}  nombre_producto={nombre_producto} descripcion={descripcion} tecnologias={tecnologiasArray} slug={slug}/>
-                    )
+                  const { slug, data } = proyecto;
+                  const autoresArray = Object.values(data.autores);
+                  const tecnologiasArray = Object.entries(data.tecnologias);
+        
+                  return (
+                    <ProjectCard 
+                        autores={autoresArray}
+                        img_producto={data.img_producto}
+                        nombre_producto={data.nombre_producto}
+                        descripcion={data.descripcion}
+                        tecnologias={tecnologiasArray}
+                        slug={slug}
+                    />
+                );
                 })
-            }
+              }
         </div>
         
     </div>

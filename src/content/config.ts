@@ -5,7 +5,7 @@ const autorSchema = z.object({
   autor: z.string(),
   programa: z.string(),
   modalidad: z.string(),
-  social: z.record(z.string(), z.string()).optional(), 
+  social: z.record(z.string(), z.string()).optional().nullable().default({}), 
 });
 
 const proyectos = defineCollection({
