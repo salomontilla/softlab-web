@@ -10,6 +10,17 @@ const {
   slug = "#",
   tecnologias = [],
   social = [],
+}: {
+  img_autor?: string;
+  autor?: string;
+  programa?: string;
+  modalidad?: string;
+  img_producto?: string;
+  nombre_producto?: string;
+  descripcion?: string;
+  slug?: string;
+  tecnologias?: string[];
+  social?: [string, string][]; // 👈 Aquí defines que social es un array de tuplas [red, link]
 } = Astro.props;
 ---
 
