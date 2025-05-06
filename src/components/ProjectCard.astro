@@ -24,9 +24,9 @@ const {
 
 <div class="w-full  min-h-[600px]  flex flex-col justify-evenly gap-3 p-8">
     <img src={img_producto} alt="Imagen">
-    <p class="text-amber-400 font-bold truncate w-full">{autores.map(autor => {
-        autor.autor
-    })}</p>
+    <p class="text-amber-400 font-bold truncate">
+        {autores.map(autor => autor.autor).join(', ')}
+    </p>
     <h3 class="font-bold">{nombre_producto}</h3>
     <p>{descripcion}.</p>
 
@@ -47,31 +47,46 @@ const {
             <!-- Modal content -->
             <div class="relative Z rounded-lg shadow-sm bg-amber-50 flex flex-col md:flex-row text-center">
                 <!-- Left side -->
-                <div class=" text-center flex flex-col items-center justify-between rounded-t dark:border-gray-600 bg-[#1B4583] text-amber-50 gap-y-7 min-w-72 p-7  lg:p-10 md:p-10">
-                    <img src=`./${}` alt=`${slug}` class="h-24 w-auto rounded-full object-cover border-2 border-white shadow">
-                    <p class="text-xl font-bold ">{autor}</p>
-                    <p class="font-bold">Programa</p>
-                    <p>{programa}</p>
-                    <p class="font-bold">Modalidad de grado</p>
-                    <p>{modalidad}</p>
-                    <div class="grid grid-cols-3 gap-5 ">
-                        <!-- Muestra dinamicamente los links a la paginas -->
-                        {
-                            social.map(([red, link]) => (
-                            <a href={link} target="_blank" rel="noopener noreferrer">
-                                <img 
-                                src= `./${red}.svg` 
-                                alt={red} 
-                                class="transition transform duration-300 hover:scale-105 w-auto h-12"
-                                />
-                            </a>
-                            ))
-                        }      
+                 <div class="min-w-72 h-[100%] flex relative overflow-scroll snap-x snap-mandatory">
 
-                    </div>
-                
-                
+                 
+                {
+                    autores.map((autor, index) => {
+                      const redes = Object.entries(autor.social || {});
+                  
+                      return (
+                        <div id={`./${index}`} class="text-center flex flex-col items-center justify-between rounded-t dark:border-gray-600 bg-[#1B4583] text-amber-50 gap-y-7 min-w-full h-full p-7 lg:p-10 md:p-10 sticky ">
+                          <img 
+                            src={`./${autor.img_autor}`} 
+                            alt={slug} 
+                            class="h-24 w-auto rounded-full object-cover border-2 border-white shadow" 
+                          />
+                          <p class="text-xl font-bold">{autor.autor}</p>
+                          <p class="font-bold">Programa</p>
+                          <p>{autor.programa}</p>
+                          <p class="font-bold">Modalidad de grado</p>
+                          <p>{autor.modalidad}</p>
+                          <div class="grid grid-cols-3 gap-5">
+                            {
+                              redes.map(([red, link]) => (
+                                link && (
+                                  <a href={link} target="_blank">
+                                    <img 
+                                      src={`./${red}.svg`} 
+                                      alt={red} 
+                                      class="transition transform duration-300 hover:scale-105 w-auto h-12" 
+                                    />
+                                  </a>
+                                )
+                              ))
+                            }
+                          </div>
+                        </div>
+                      );
+                    })
+                  }
                 </div>
+                
                 <!-- Right side -->
                 <div class="p-7  lg:p-10 md:p-10 space-y-4 flex flex-col items-center justify-center align-middle text-[#1B4583]">
                     

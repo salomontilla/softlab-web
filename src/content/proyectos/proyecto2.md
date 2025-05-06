@@ -2,7 +2,7 @@
 autores:
     autor1:
         img_autor: persona.jpg
-        autor: Cristhian Alejandro Cañar Muñoz
+        autor: Salomon Montilla
         programa: Ingenieria de software
         modalidad: registro de software
         social:
