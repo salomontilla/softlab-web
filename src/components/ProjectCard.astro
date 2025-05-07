@@ -4,6 +4,7 @@ const {
   img_producto = "producto.jpg",
   nombre_producto = "Nombre del Producto",
   descripcion = "Descripción no disponible.",
+  fecha = "0000-00-00",
   slug = "#",
   tecnologias = [],
 }: {
@@ -17,6 +18,7 @@ const {
   img_producto?: string;
   nombre_producto?: string;
   descripcion?: string;
+  fecha?:string;
   slug?: string;
   tecnologias?: string[];
 } = Astro.props;
@@ -74,7 +76,7 @@ const {
                               {
                                 redes.map(([red, link]) => (
                                   link && (
-                                    <a href={link} target="_blank">
+                                    <a href=`{link}` target="_blank">
                                       <img 
                                         src={`./${red}.svg`} 
                                         alt={red} 

@@ -12,24 +12,31 @@ const proyectos = await getCollection('proyectos')
     </header>
     <div class="w-full px-10 md:px-14 lg:px-24 ">
         <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-            {
-                proyectos.map(proyecto => {
+            {[...proyectos]
+                .sort((a, b) => {
+                  const fechaA = new Date(a.data.fecha).getTime();
+                  const fechaB = new Date(b.data.fecha).getTime();
+                  return fechaB - fechaA; 
+                })  
+                .slice(0, 3)
+                .map(proyecto => {
                   const { slug, data } = proyecto;
                   const autoresArray = Object.values(data.autores);
                   const tecnologiasArray = Object.entries(data.tecnologias);
-        
+              
                   return (
                     <ProjectCard 
-                        autores={autoresArray}
-                        img_producto={data.img_producto}
-                        nombre_producto={data.nombre_producto}
-                        descripcion={data.descripcion}
-                        tecnologias={tecnologiasArray}
-                        slug={slug}
+                      key={slug}
+                      autores={autoresArray}
+                      img_producto={data.img_producto}
+                      nombre_producto={data.nombre_producto}
+                      descripcion={data.descripcion}
+                      fecha={data.fecha}
+                      tecnologias={tecnologiasArray}
+                      slug={slug}
                     />
-                );
-                })
-              }
+                  );
+                })}
         </div>
         
     </div>

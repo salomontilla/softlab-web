@@ -32,6 +32,7 @@ autores:
 img_producto: img_ejemplo.jpg
 nombre_producto: Nombre del producto
 descripcion: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac nisl sapien. In in aliquet nisi. Fusce sit amet volutpat enim. Praesent condimentum justo magna, et sodales nibh accumsan nec.
+fecha: 2024-09-12
 tecnologias:
     java: logo_java.svg
     html: logo_html.svg

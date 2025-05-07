@@ -14,6 +14,7 @@ const proyectos = defineCollection({
     img_producto: z.string(),
     nombre_producto: z.string(),
     descripcion: z.string(),
+    fecha:z.date(),
     tecnologias: z.record(z.string(), z.string()),
   }),
 });

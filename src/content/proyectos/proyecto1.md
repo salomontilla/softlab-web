@@ -2,7 +2,7 @@
 autores:
     autor1:
         img_autor: persona.jpg
-        autor: Cristhian Alejandro Cañar Muñoz
+        autor: Primero Alejandro Cañar Muñoz
         programa: Ingenieria de software
         modalidad: registro de software
         social:
@@ -33,6 +33,7 @@ autores:
 img_producto: img_ejemplo.jpg
 nombre_producto: Softlab
 descripcion: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac nisl sapien. In in aliquet nisi. Fusce sit amet volutpat enim. Praesent condimentum justo magna, et sodales nibh accumsan nec.
+fecha: 2025-09-10
 tecnologias:
     java: logo_java.svg
     html: logo_html.svg
