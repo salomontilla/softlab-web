@@ -47,54 +47,56 @@ const {
             <!-- Modal content -->
             <div class="relative Z rounded-lg shadow-sm bg-amber-50 flex flex-col md:flex-row text-center">
                 <!-- Left side -->
-                <div class="product-container min-w-72 h-[100%] flex relative overflow-x-scroll scroll-smooth">
-                  <button
-                  class="pre-btn text-white left-2 rotate-180 opacity-90 hover:opacity-40 cursor-pointer absolute top-1/2 -translate-y-1/2">
-                  <svg class="w-6 h-6"  fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330.002 330.002"><path id="XMLID_103_" d="M233.252,155.997L120.752,6.001c-4.972-6.628-14.372-7.97-21-3c-6.628,4.971-7.971,14.373-3,21 l105.75,140.997L96.752,306.001c-4.971,6.627-3.627,16.03,3,21c2.698,2.024,5.856,3.001,8.988,3.001 c4.561,0,9.065-2.072,12.012-6.001l112.5-150.004C237.252,168.664,237.252,161.33,233.252,155.997z"></path></svg>
-                  </button>
-                 
-                
-                  
-                {
-                    autores.map((autor, index) => {
-                      const redes = Object.entries(autor.social || {});
-                  
-                      return (
-                        <div id={`./${index}`} class="text-center flex flex-col items-center justify-between rounded-t dark:border-gray-600 bg-[#1B4583] text-amber-50 gap-y-7 min-w-full h-full p-7 lg:p-10 md:p-10 ">
-                          <img 
-                            src={`./${autor.img_autor}`} 
-                            alt={slug} 
-                            class="h-24 w-auto rounded-full object-cover border-2 border-white shadow" 
-                          />
-                          <p class="text-xl font-bold">{autor.autor}</p>
-                          <p class="font-bold">Programa</p>
-                          <p>{autor.programa}</p>
-                          <p class="font-bold">Modalidad de grado</p>
-                          <p>{autor.modalidad}</p>
-                          <div class="grid grid-cols-3 gap-5">
-                            {
-                              redes.map(([red, link]) => (
-                                link && (
-                                  <a href={link} target="_blank">
-                                    <img 
-                                      src={`./${red}.svg`} 
-                                      alt={red} 
-                                      class="transition transform duration-300 hover:scale-105 w-auto h-12" 
-                                    />
-                                  </a>
-                                )
-                              ))
-                            }
+                 <div class="min-w-72 relative">
+                   <button
+                    class="pre-btn text-white left-2 rotate-180 opacity-90 hover:opacity-40 cursor-pointer absolute top-1/2 -translate-y-1/2">
+                    <svg class="w-6 h-6"  fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330.002 330.002"><path id="XMLID_103_" d="M233.252,155.997L120.752,6.001c-4.972-6.628-14.372-7.97-21-3c-6.628,4.971-7.971,14.373-3,21 l105.75,140.997L96.752,306.001c-4.971,6.627-3.627,16.03,3,21c2.698,2.024,5.856,3.001,8.988,3.001 c4.561,0,9.065-2.072,12.012-6.001l112.5-150.004C237.252,168.664,237.252,161.33,233.252,155.997z"></path></svg>
+                   </button>
+                  <div class="product-container flex overflow-x-scroll scroll-smooth scrollbar-hide min-h-full">
+                   
+                  {
+                      autores.map((autor, index) => {
+                        const redes = Object.entries(autor.social || {});
+                    
+                        return (
+                          <div id={`./${index}`} class="text-center flex flex-col items-center justify-between rounded-t dark:border-gray-600 bg-[#1B4583] text-amber-50 gap-y-7 min-w-full p-7 lg:p-10 md:p-10 ">
+                            <img 
+                              src={`./${autor.img_autor}`} 
+                              alt={slug} 
+                              class="h-24 w-auto rounded-full object-cover border-2 border-white shadow" 
+                            />
+                            <p class="text-xl font-bold">{autor.autor}</p>
+                            <p class="font-bold">Programa</p>
+                            <p>{autor.programa}</p>
+                            <p class="font-bold">Modalidad de grado</p>
+                            <p>{autor.modalidad}</p>
+                            <div class="grid grid-cols-3 gap-5">
+                              {
+                                redes.map(([red, link]) => (
+                                  link && (
+                                    <a href={link} target="_blank">
+                                      <img 
+                                        src={`./${red}.svg`} 
+                                        alt={red} 
+                                        class="transition transform duration-300 hover:scale-105 w-auto h-12" 
+                                      />
+                                    </a>
+                                  )
+                                ))
+                              }
+                            </div>
                           </div>
-                        </div>
-                      );
-                    })
-                  }
-                  <button 
-                  class="nxt-btn text-white absolute top-1/2 -translate-y-1/2 cursor-pointer right-2 opacity-90 hover:opacity-40">
-                  <svg class="w-6 h-6"  fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330.002 330.002"><path id="XMLID_103_" d="M233.252,155.997L120.752,6.001c-4.972-6.628-14.372-7.97-21-3c-6.628,4.971-7.971,14.373-3,21 l105.75,140.997L96.752,306.001c-4.971,6.627-3.627,16.03,3,21c2.698,2.024,5.856,3.001,8.988,3.001 c4.561,0,9.065-2.072,12.012-6.001l112.5-150.004C237.252,168.664,237.252,161.33,233.252,155.997z"></path></svg>
-                  </button>
-                </div>
+                        );
+                      })
+                    }
+                    <button 
+                    class="nxt-btn text-white absolute top-1/2 -translate-y-1/2 cursor-pointer right-2 opacity-90 hover:opacity-40">
+                    <svg class="w-6 h-6"  fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330.002 330.002"><path id="XMLID_103_" d="M233.252,155.997L120.752,6.001c-4.972-6.628-14.372-7.97-21-3c-6.628,4.971-7.971,14.373-3,21 l105.75,140.997L96.752,306.001c-4.971,6.627-3.627,16.03,3,21c2.698,2.024,5.856,3.001,8.988,3.001 c4.561,0,9.065-2.072,12.012-6.001l112.5-150.004C237.252,168.664,237.252,161.33,233.252,155.997z"></path></svg>
+                    </button>
+                  </div>
+                 </div>
+
+                
                 
                 <!-- Right side -->
                 <div class="p-7  lg:p-10 md:p-10 space-y-4 flex flex-col items-center justify-center align-middle text-[#1B4583]">
@@ -130,7 +132,7 @@ const {
 const productContainers = document.querySelectorAll('.product-container');
 const nxtBtn = document.querySelectorAll('.nxt-btn');
 const preBtn = document.querySelectorAll('.pre-btn');
-
+console.log(productContainers)
 productContainers.forEach((container, i) => {
   const containerWidth = container.getBoundingClientRect().width;
 
