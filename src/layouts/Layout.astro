@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css'
 import '@fontsource-variable/montserrat';
+const { title } = Astro.props;
 ---
 <!doctype html>
 <html lang="en" class=" font-montserrat scroll-smooth" >
@@ -9,7 +10,7 @@ import '@fontsource-variable/montserrat';
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>SoftLab</title>
+		<title>Softlab - {title}</title>
 	</head>
 	<body>
 		<slot />

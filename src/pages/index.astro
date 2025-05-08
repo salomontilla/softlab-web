@@ -1,14 +1,24 @@
 ---
 import Hero from '../components/Hero.astro';
-import Proyectos from '../components/Proyectos.astro';
+import ProyectosHero from '../components/ProyectosHero.astro';
 import Cta from '../components/Cta.astro';
 import Footer from '../components/Footer.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout>
+<Layout title="Home">
     <Hero />    
-    <Proyectos />
+    <ProyectosHero />
     <Cta />
     <Footer />
 </Layout>
+<script>
+    //volver a la posicion donde estaba
+    window.addEventListener('beforeunload', () => {
+  sessionStorage.setItem('scrollPos', window.scrollY);
+});
+window.addEventListener('load', () => {
+  const pos = sessionStorage.getItem('scrollPos');
+  if (pos) window.scrollTo(0, parseInt(pos));
+});
+</script>

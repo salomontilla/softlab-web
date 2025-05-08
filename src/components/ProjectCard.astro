@@ -24,7 +24,9 @@ const {
 } = Astro.props;
 ---
 
-<div class="w-full  min-h-[600px]  flex flex-col justify-evenly gap-3 p-8">
+<a href={`/producto/${slug}`} class="w-full  min-h-[600px] shadow-xl  flex flex-col justify-evenly gap-3 p-8 transition-all duration-300 ease-in-out 
+     hover:scale-105 hover:shadow-2xl 
+    cursor-pointer active:scale-100 active:duration-75 rounded-xl">
     <img src={img_producto} alt="Imagen">
     <p class="text-amber-400 font-bold truncate">
         {autores.map(autor => autor.autor).join(', ')}
@@ -32,19 +34,13 @@ const {
     <h3 class="font-bold">{nombre_producto}</h3>
     <p>{descripcion}.</p>
 
-    <!-- Modal toggle -->
-    <button data-modal-target=`detalles-${slug}` data-modal-toggle=`detalles-${slug}` class="bg-[#1B4583] text-amber-50 rounded-2xl h-16 w-full flex justify-center items-center text-center transition-all duration-300 ease-in-out 
-    hover:brightness-105 hover:scale-105 hover:shadow-lg 
-    cursor-pointer active:scale-100 active:duration-75" type="button">
-    Conoce más
-    </button>
-</div>
+</a>
 
 <!-- Main modal -->
 <div id= `detalles-${slug}`
      tabindex="-1"
      aria-hidden="true"
-     class="visible overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+     class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative p-4 w-full max-w-5xl max-h-full">
             <!-- Modal content -->
             <div class="relative Z rounded-lg shadow-sm bg-amber-50 flex flex-col md:flex-row text-center">
