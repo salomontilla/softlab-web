@@ -27,7 +27,7 @@ const {
 <a href={`/producto/${slug}`} class="w-full  min-h-[600px] shadow-xl  flex flex-col justify-evenly gap-3 p-8 transition-all duration-300 ease-in-out 
      hover:scale-105 hover:shadow-2xl 
     cursor-pointer active:scale-100 active:duration-75 rounded-xl">
-    <img src={img_producto} alt="Imagen">
+    <img src={`/public/${img_producto}`} alt="Imagen del producto" class="w-full h-48 object-cover rounded-xl mb-4" loading="lazy"/>
     <p class="text-amber-400 font-bold truncate">
         {autores.map(autor => autor.autor).join(', ')}
     </p>
@@ -36,110 +36,4 @@ const {
 
 </a>
 
-<!-- Main modal -->
-<div id= `detalles-${slug}`
-     tabindex="-1"
-     aria-hidden="true"
-     class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-        <div class="relative p-4 w-full max-w-5xl max-h-full">
-            <!-- Modal content -->
-            <div class="relative Z rounded-lg shadow-sm bg-amber-50 flex flex-col md:flex-row text-center">
-                <!-- Left side -->
-                 <div class="min-w-72 relative">
-                   <button
-                    class="pre-btn text-white left-2 rotate-180 opacity-90 hover:opacity-40 cursor-pointer absolute top-1/2 -translate-y-1/2">
-                    <svg class="w-6 h-6"  fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330.002 330.002"><path id="XMLID_103_" d="M233.252,155.997L120.752,6.001c-4.972-6.628-14.372-7.97-21-3c-6.628,4.971-7.971,14.373-3,21 l105.75,140.997L96.752,306.001c-4.971,6.627-3.627,16.03,3,21c2.698,2.024,5.856,3.001,8.988,3.001 c4.561,0,9.065-2.072,12.012-6.001l112.5-150.004C237.252,168.664,237.252,161.33,233.252,155.997z"></path></svg>
-                   </button>
-                  <div class="product-container flex overflow-x-scroll scroll-smooth scrollbar-hide min-h-full">
-                   
-                  {
-                      autores.map((autor, index) => {
-                        const redes = Object.entries(autor.social || {});
-                    
-                        return (
-                          <div id={`./${index}`} class="text-center flex flex-col items-center justify-between rounded-t dark:border-gray-600 bg-[#1B4583] text-amber-50 gap-y-7 min-w-full p-7 lg:p-10 md:p-10 ">
-                            <img 
-                              src={`./${autor.img_autor}`} 
-                              alt={slug} 
-                              class="h-24 w-auto rounded-full object-cover border-2 border-white shadow" 
-                            />
-                            <p class="text-xl font-bold">{autor.autor}</p>
-                            <p class="font-bold">Programa</p>
-                            <p>{autor.programa}</p>
-                            <p class="font-bold">Modalidad de grado</p>
-                            <p>{autor.modalidad}</p>
-                            <div class="grid grid-cols-3 gap-5">
-                              {
-                                redes.map(([red, link]) => (
-                                  link && (
-                                    <a href=`{link}` target="_blank">
-                                      <img 
-                                        src={`./${red}.svg`} 
-                                        alt={red} 
-                                        class="transition transform duration-300 hover:scale-105 w-auto h-12" 
-                                      />
-                                    </a>
-                                  )
-                                ))
-                              }
-                            </div>
-                          </div>
-                        );
-                      })
-                    }
-                    <button 
-                    class="nxt-btn text-white absolute top-1/2 -translate-y-1/2 cursor-pointer right-2 opacity-90 hover:opacity-40">
-                    <svg class="w-6 h-6"  fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330.002 330.002"><path id="XMLID_103_" d="M233.252,155.997L120.752,6.001c-4.972-6.628-14.372-7.97-21-3c-6.628,4.971-7.971,14.373-3,21 l105.75,140.997L96.752,306.001c-4.971,6.627-3.627,16.03,3,21c2.698,2.024,5.856,3.001,8.988,3.001 c4.561,0,9.065-2.072,12.012-6.001l112.5-150.004C237.252,168.664,237.252,161.33,233.252,155.997z"></path></svg>
-                    </button>
-                  </div>
-                 </div>
 
-                
-                
-                <!-- Right side -->
-                <div class="p-7  lg:p-10 md:p-10 space-y-4 flex flex-col items-center justify-center align-middle text-[#1B4583]">
-                    
-                    <img src= {img_producto} alt="Producto" class="h-52 w-auto">
-                    <p class="font-bold text-xl">{nombre_producto}</p>
-                    <p class="text-left" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil blanditiis vero quisquam voluptatibus dolorum delectus aliquid facilis laboriosam, ipsam numquam velit, dolores consectetur non explicabo doloribus consequatur saepe corporis deleniti.</p>
-                    <p class="font-bold">Tecnologias usadas</p>
-                    <div class="grid grid-cols-4 gap-7">
-                        {
-                            tecnologias.map(([nombre, src]) => (
-                                <img 
-                                src= `./${src}` 
-                                alt={nombre} 
-                                class="transition transform duration-300 hover:scale-105 w-auto h-12"
-                                />
-                            
-                            ))
-                        }   
-                    </div>
-                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-[#1B4583] rounded-lg text-sm w-8 h-8 absolute top-2 right-2 inline-flex justify-center items-center" data-modal-hide=`detalles-${slug}`>
-                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                        </svg>
-                        <span class="sr-only">Close modal</span>
-                    </button>
-                </div>
-            
-            </div>
-        </div>
-    </div>
-<script>
-const productContainers = document.querySelectorAll('.product-container');
-const nxtBtn = document.querySelectorAll('.nxt-btn');
-const preBtn = document.querySelectorAll('.pre-btn');
-console.log(productContainers)
-productContainers.forEach((container, i) => {
-  const containerWidth = container.getBoundingClientRect().width;
-
-  nxtBtn[i].addEventListener('click', () => {
-    container.scrollLeft += containerWidth;
-  });
-
-  preBtn[i].addEventListener('click', () => {
-    container.scrollLeft -= containerWidth;
-  });
-});
-</script>
