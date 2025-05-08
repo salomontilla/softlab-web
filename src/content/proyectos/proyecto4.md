@@ -2,7 +2,7 @@
 autores:
     autor1:
         img_autor: persona.jpg
-        autor: Cristhian Alejandro Cañar Muñoz
+        autor: 1 Alejandro Cañar Muñoz
         programa: Ingenieria de software
         modalidad: registro de software
         social:
@@ -18,7 +18,7 @@ autores:
             
     autor3:
         img_autor: persona.jpg
-        autor: Julián Andrés Trochez Obando
+        autor: 8 Andrés Trochez Obando
         programa: Ingenieria de software
         modalidad: registro de software
         social:

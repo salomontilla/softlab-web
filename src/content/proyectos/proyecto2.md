@@ -2,7 +2,7 @@
 autores:
     autor1:
         img_autor: persona.jpg
-        autor: Salomon Montilla
+        autor: 6 Montilla
         programa: Ingenieria de software
         modalidad: registro de software
         social:
