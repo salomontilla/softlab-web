@@ -48,7 +48,7 @@ const proyectosPaginados = proyectos.slice(start, end);
           <nav aria-label="Page navigation example">
             <ul class="flex items-center -space-x-px h-10 text-base">
               <li>
-                <a href={`?page=${page - 1}`} rel="external" class={`flex items-center justify-center px-4 h-10 ms-0 leading-tight border border-e-0 border-blue-300 rounded-s-lg ${page <= 1 ? 'text-gray-300 bg-gray-100 cursor-auto' : 'text-blue-600 bg-white hover:bg-blue-100 hover:text-blue-700'}`} aria-disabled={page <= 1}>
+                <a href={`?page=${page - 1}`} rel="external" class={`flex items-center justify-center px-4 h-10 ms-0 leading-tight border border-e-0 border-blue-300 rounded-s-lg ${page <= 1 ? 'text-gray-300 bg-gray-100 hidden cursor-auto' : 'text-blue-600 bg-white hover:bg-blue-100 hover:text-blue-700'}`} aria-disabled={page <= 1}>
                   <span class="sr-only">Anterior</span>
                   <svg class="w-3 h-3" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-width="2" d="M5 1 1 5l4 4"/></svg>
                 </a>
@@ -66,7 +66,7 @@ const proyectosPaginados = proyectos.slice(start, end);
               })}
                     
               <li>
-                <a rel="external" href={`?page=${page + 1}`} class={`flex items-center justify-center px-4 h-10 leading-tight border border-blue-300 rounded-e-lg ${page >= totalPages ? 'text-gray-300 bg-gray-100 cursor-auto' : 'text-blue-600 bg-white hover:bg-blue-100 hover:text-blue-700'}`} aria-disabled={page >= totalPages}>
+                <a rel="external" href={`?page=${page + 1}`} class={`flex items-center justify-center px-4 h-10 leading-tight border border-blue-300 rounded-e-lg ${page >= totalPages ? 'text-gray-300 bg-gray-100 cursor-auto hidden' : 'text-blue-600 bg-white hover:bg-blue-100 hover:text-blue-700'}`} aria-disabled={page >= totalPages}>
                   <span class="sr-only">Siguiente</span>
                   <svg class="w-3 h-3" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-width="2" d="m1 9 4-4-4-4"/></svg>
                 </a>
