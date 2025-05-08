@@ -12,13 +12,3 @@ import Layout from '../layouts/Layout.astro';
     <Cta />
     <Footer />
 </Layout>
-<script>
-    //volver a la posicion donde estaba
-    window.addEventListener('beforeunload', () => {
-  sessionStorage.setItem('scrollPos', `${window.scrollY}`);
-});
-window.addEventListener('load', () => {
-  const pos = sessionStorage.getItem('scrollPos');
-  if (pos) window.scrollTo(0, parseInt(pos));
-});
-</script>
