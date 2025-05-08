@@ -15,7 +15,7 @@ import Layout from '../layouts/Layout.astro';
 <script>
     //volver a la posicion donde estaba
     window.addEventListener('beforeunload', () => {
-  sessionStorage.setItem('scrollPos', window.scrollY);
+  sessionStorage.setItem('scrollPos', `${window.scrollY}`);
 });
 window.addEventListener('load', () => {
   const pos = sessionStorage.getItem('scrollPos');
