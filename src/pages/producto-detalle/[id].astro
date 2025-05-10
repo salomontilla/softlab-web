@@ -81,10 +81,6 @@ const tecnologiasArray = Object.entries(data.tecnologias);
 </div> 
         </aside>
             
-
-       
-
-       
         <div class="w-full min-h-full flex flex-col items-center text-center justify-center gap-4 p-8">
             <h2>Fecha de registro</h2>
             <p>{data.fecha}</p>
@@ -103,3 +99,13 @@ const tecnologiasArray = Object.entries(data.tecnologias);
     </section>
     <Footer/>
 </Layout>
+<!-- Incluye esto al final del body del archivo -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // @ts-ignore
+    if (typeof initFlowbite !== 'undefined') {
+      // @ts-ignore
+      initFlowbite();
+    }
+  });
+</script>
