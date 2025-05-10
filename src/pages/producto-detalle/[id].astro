@@ -22,18 +22,18 @@ const tecnologiasArray = Object.entries(data.tecnologias);
 ---
 <Layout title="Detalles">
     <header class="relative w-full h-fit p-3 flex flex-col text-amber-50 gap-y-5 justify-center items-center text-center ">
-        <img src=`/softlab-web//img/${data.img_producto}` alt={`${data.nombre_producto}`} class="w-full h-full absolute object-cover" loading="lazy"/>
+        <img src=`/softlab-web//img/${data.img_producto}` alt={`${data.nombre_producto}`} class="w-full h-full absolute object-cover" loading="eager"/>
         <div class="h-full absolute inset-0  bg-gradient-to-t from-blue-900 to-transparent z-0">
         </div>
         <Navbar/>
-        <a class="absolute left-6 top-6 font-light text-base md:text-lg underline hover:scale-101 transition-all duration-300 ease-in-out cursor-pointer " href="/softlab-web/productos/1">← Volver</a>
+        <a class="absolute left-6 bottom-4 md:top-6 font-light text-base md:text-lg underline hover:scale-101 transition-all duration-300 ease-in-out cursor-pointer " href="/softlab-web/productos/1">← Volver</a>
         <h1 class="text-2xl text-bold z-10">{data.nombre_producto}</h1>
     </header>
-    <section class="w-full h-full flex items-center ">
-        <aside class="w-[40%] h-full">
+    <section class="w-full h-full flex items-start relative flex-col md:flex-row justify-center gap-4 p-8 bg-[#F5F5F5]">
+        <aside class="w-[100%]  md:w-3xl md: h-full">
             <div id="default-carousel" class="relative w-full" data-carousel="static">
     <!-- Carousel wrapper -->
-    <div class="relative h-56 overflow-hidden  md:h-[500px] ">
+    <div class="relative overflow-hidden h-[450px] ">
          {autoresArray.map((autor) => {
                 return (
                 <AutoresCard 
@@ -52,7 +52,6 @@ const tecnologiasArray = Object.entries(data.tecnologias);
     
         {
             autoresArray.map((_, index) => {
-                console.log(index);
                 return (
                     <button type="button" class="w-3 h-3 rounded-full" aria-current={index === 0 ? "true" : "false"} aria-label={`Slide ${index + 1}`} data-carousel-slide-to={index}></button>
                 )
@@ -62,17 +61,21 @@ const tecnologiasArray = Object.entries(data.tecnologias);
         
     </div>
     <!-- Slider controls -->
-    <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+    <button type="button" class="hidden absolute top-0 start-0 z-30 sm:flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-transparent">
+            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180 transition-all duration-300 ease-in-out 
+         hover:scale-110  
+         hover:shadow-lg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
             </svg>
             <span class="sr-only">Previous</span>
         </span>
     </button>
-    <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+    <button type="button" class="absolute top-0 end-0 z-30 sm:flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none  hidden" data-carousel-next>
+        <span class="inline-flex items-center justify-center w-10 h-10">
+            <svg class="transition-all duration-300 ease-in-out 
+         hover:scale-110  
+         hover:shadow-lg w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
             </svg>
             <span class="sr-only">Next</span>
@@ -81,31 +84,28 @@ const tecnologiasArray = Object.entries(data.tecnologias);
 </div> 
         </aside>
             
-        <div class="w-full min-h-full flex flex-col items-center text-center justify-center gap-4 p-8">
-            <h2>Fecha de registro</h2>
-            <p>{data.fecha}</p>
-            <div class="w-full h-full flex items-center justify-center gap-4">
+        <div class="w-full min-h-full flex flex-col items-start justify-items-start gap-4 py-3 text-[#1B4583] ">
+            <h2 class="font-bold text-2xl">Fecha de registro</h2>
+            <p class="text-xl">{new Date(data.fecha).toLocaleDateString('es-CO', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+            }).replace('de ', 'de ').replace(',', ' del')}</p>
+            <h2 class="font-bold text-2xl">Tecnologías</h2>
+
+            <div class="w-full h-full grid grid-cols-4 sm:grid-cols-10 items-center justify-around">
                 {
                     tecnologiasArray.map(([tecnologia, icono]) => {
                         return (
-                                <img src={`/softlab-web//logos/${icono}`}  alt={tecnologia} class="w-full max-w-[50px] h-auto object-contain" loading="lazy"/>
+                                <img src={`/softlab-web//logos/${icono}`}  alt={tecnologia} class="w-full max-w-[50px] h-auto object-contain transition-all duration-300 ease-in-out 
+                                hover:scale-110" loading="eager"/>
                         )
                     })
                 }
             </div>
-            <h2>Información</h2>
+            <h2 class="font-bold text-2xl">Descripción</h2>
             <p>{data.descripcion}</p>
         </div>
     </section>
     <Footer/>
 </Layout>
-<!-- Incluye esto al final del body del archivo -->
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // @ts-ignore
-    if (typeof initFlowbite !== 'undefined') {
-      // @ts-ignore
-      initFlowbite();
-    }
-  });
-</script>
