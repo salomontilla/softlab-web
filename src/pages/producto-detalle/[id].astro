@@ -1,0 +1,64 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+
+import AutoresCard from "../../components/AutoresCard.astro";
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import ProyectosHero from "../../components/ProyectosHero.astro";
+import Footer from "../../components/Footer.astro";
+export async function getStaticPaths() {
+  const proyectos = await getCollection("proyectos");
+
+  return proyectos.map((proyecto) => ({
+    params: { id: proyecto.slug },
+    props:{proyecto}
+  }));
+
+}
+const { proyecto } = Astro.props;
+const { slug, data } = proyecto;
+const autoresArray = Object.values(data.autores);
+const tecnologiasArray = Object.entries(data.tecnologias);
+
+---
+<Layout title="Softlab - Detalles">
+    <header class="relative w-full h-[180px] p-8 bg-[#1B4583] flex flex-col text-amber-50 gap-y-2.5 justify-center items-center">
+        <Navbar/>
+        <a class="absolute left-6 top-6 font-light text-base md:text-lg underline hover:scale-101 transition-all duration-300 ease-in-out cursor-pointer " href="/softlab-web/productos/1">← Volver</a>
+        <h1>{data.nombre_producto}</h1>
+    </header>
+    <section class="w-full h-full flex items-center justify-between">
+        <aside>
+            {autoresArray.map((autor) => {
+                return (
+                <AutoresCard 
+                    author={{
+                        nombre: autor.autor,
+                        programa: autor.programa,
+                        modalidad: autor.modalidad,
+                        imagen: autor.img_autor
+                    }}
+/>
+                );
+              })}
+            
+        </aside>
+        <div>
+            <h2>Fecha de registro</h2>
+            <p>{data.fecha}</p>
+            <div>
+                {
+                    tecnologiasArray.map(([tecnologia, icono]) => {
+                        return (
+                                <img src={`/softlab-web//logos/${icono}`}  alt={tecnologia} class="w-6 h-6" loading="lazy"/>
+                        )
+                    })
+                }
+            </div>
+            <h2>Información</h2>
+            <p>{data.descripcion}</p>
+        </div>
+    </section>
+    <Footer/>
+</Layout>
