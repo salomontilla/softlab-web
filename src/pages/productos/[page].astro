@@ -29,7 +29,6 @@ const { page } = Astro.props;
                       const { slug, data } = proyecto;
                       const autoresArray = Object.values(data.autores);
                       const tecnologiasArray = Object.entries(data.tecnologias);
-                      console.log(data.img_producto)
                       return (
                         <ProjectCard 
                           key={slug}

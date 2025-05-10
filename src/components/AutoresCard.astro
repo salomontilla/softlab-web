@@ -3,11 +3,11 @@ const { author } = Astro.props;
 const { nombre, programa, modalidad, imagen }:
 {nombre:string, programa:string, modalidad:string, imagen:string} = author;
 ---
-<div class="flex flex-col items-center justify-center w-full h-full p-4 bg-[#1B4583] text-amber-50 gap-y-6">
+<div class="flex flex-col items-center justify-center w-full h-full text-[#1B4583] gap-y-6 align-middle text-center duration-700 ease-in-out" data-carousel-item>
     <img src=`/softlab-web//img/${imagen}` alt=`Imagen del autor` class="w-24 h-24 aspect-square rounded-full mb-4" loading="lazy"/>
-    <p>{nombre}</p>
-    <p>Programa</p>
+    <p class="text-lg font-bold">{nombre}</p>
+    <p class="text-lg font-bold">Programa</p>
     <p>{programa}</p>
-    <p>Modalidad de grado</p>
+    <p class="text-lg font-bold">Modalidad de grado</p>
     <p>{modalidad}</p>
 </div>
