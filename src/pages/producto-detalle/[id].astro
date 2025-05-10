@@ -21,11 +21,13 @@ const tecnologiasArray = Object.entries(data.tecnologias);
 
 ---
 <Layout title="Detalles">
-    <header class="relative w-full h-fit p-3 flex flex-col text-amber-50 gap-y-5 justify-center items-center">
+    <header class="relative w-full h-fit p-3 flex flex-col text-amber-50 gap-y-5 justify-center items-center text-center ">
         <img src=`/softlab-web//img/${data.img_producto}` alt={`${data.nombre_producto}`} class="w-full h-full absolute object-cover" loading="lazy"/>
+        <div class="h-full absolute inset-0  bg-gradient-to-t from-blue-900 to-transparent z-0">
+        </div>
         <Navbar/>
         <a class="absolute left-6 top-6 font-light text-base md:text-lg underline hover:scale-101 transition-all duration-300 ease-in-out cursor-pointer " href="/softlab-web/productos/1">← Volver</a>
-        <h1>{data.nombre_producto}</h1>
+        <h1 class="text-2xl text-bold z-10">{data.nombre_producto}</h1>
     </header>
     <section class="w-full h-full flex items-center ">
         <aside class="w-[40%] h-full">
