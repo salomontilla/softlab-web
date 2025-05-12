@@ -17,7 +17,7 @@ import { ClientRouter } from 'astro:transitions';
     <ClientRouter />
 
     <!-- Flowbite -->
-    <script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js" defer></script>
+    <script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
   </head>
 
   <body>
@@ -27,23 +27,5 @@ import { ClientRouter } from 'astro:transitions';
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-    <!-- Flowbite reinit on navigation -->
-    <script is:inline>
-      document.addEventListener('astro:after-swap', () => {
-        // @ts-ignore
-        if (typeof initFlowbite !== 'undefined') {
-          // @ts-ignore
-          initFlowbite();
-        }
-      });
-
-      document.addEventListener('DOMContentLoaded', () => {
-        // @ts-ignore
-        if (typeof initFlowbite !== 'undefined') {
-          // @ts-ignore
-          initFlowbite();
-        }
-      });
-    </script>
   </body>
 </html>
