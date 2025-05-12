@@ -93,7 +93,7 @@ const tecnologiasArray = Object.entries(data.tecnologias);
             
         <div class="w-full min-h-full flex flex-col items-start justify-items-start gap-4 py-3 text-[#1B4583] ">
             <h2 class="font-bold text-2xl">Fecha de registro</h2>
-            <p class="text-xl">{new Date(data.fecha).toLocaleDateString('es-CO', {
+            <p>{new Date(data.fecha).toLocaleDateString('es-CO', {
             day: 'numeric',
             month: 'long',
             year: 'numeric'
@@ -104,7 +104,7 @@ const tecnologiasArray = Object.entries(data.tecnologias);
                 {
                     tecnologiasArray.map(([tecnologia, icono]) => {
                         return (
-                                <img src={`/softlab-web//logos/${icono}`}  alt={tecnologia} class="w-full max-w-[50px] h-auto object-contain transition-all duration-300 ease-in-out 
+                                <img src={`/softlab-web//logos/${icono}`}  alt={tecnologia} class="w-full max-w-[50px] h-auto object-contain transition-all duration-200 ease-in-out 
                                 hover:scale-110" loading="eager"/>
                         )
                     })
