@@ -1,11 +1,17 @@
+---
+import { Picture } from "astro:assets";
+import logoUniversidad from "./../assets/base/uni_logo_azul.png";
+import logoSoftlab from "./../assets/base/softlab_logo.png";
+---
+
 <footer class="w-full flex flex-col items-center justify-between">
     <div class="text-[#1B4583] w-full items-center flex justify-evenly py-5 shadow">
         <h1 class="font-bold text-4xl md:text-5xl">CONTACTO</h1>
     </div>
     <div class="text-[#1B4583] flex flex-col md:flex-row gap-5 py-5 w-full justify-evenly items-center align-middle">
         <div class="flex gap-5 md:gap-0">
-            <img class="h-16 w-auto align-middle" src="/softlab-web//img/uni_logo_azul.png" alt="Logo universidad">
-            <img class="h-16 w-auto align-middle md:hidden" src="/softlab-web//img/softlab_logo.png" alt="Logo softlab">
+            <Picture class="h-16 w-auto align-middle" src={logoUniversidad} alt="Logo universidad">
+            <Picture class="h-16 w-auto align-middle md:hidden" src={logoSoftlab} alt="Logo softlab">
         </div>
         
         <div class="flex flex-col align-middle text-center w-fit h-full justify-evenly gap-2">
@@ -29,7 +35,7 @@
             <a href="https://www.uniautonoma.edu.co/universidad/sedes" target="_blank" class="transition transform duration-300 hover:scale-105">Información de sedes</a>
         </div>
         <div class="hidden md:flex">
-            <img class="h-16 w-auto align-middle" src="/softlab-web//img/softlab_logo.png" alt="Logo softlab">
+            <Picture class="h-16 w-auto align-middle" formats={['webp']} src={logoSoftlab} alt="Logo softlab"/>
         </div>
     </div>
 </footer>
