@@ -14,10 +14,12 @@ export async function getStaticPaths() {
   }));
 
 }
+
 const { proyecto } = Astro.props;
 const { slug, data } = proyecto;
 const autoresArray = Object.values(data.autores);
 const tecnologiasArray = Object.entries(data.tecnologias);
+
 
 ---
 <Layout title="Detalles">
@@ -34,10 +36,10 @@ const tecnologiasArray = Object.entries(data.tecnologias);
         <h1 class="text-2xl text-bold z-10">{data.nombre_producto}</h1>
     </header>
     <section  class="w-full h-full flex items-start relative flex-col md:flex-row justify-center gap-4 p-8 bg-[#F5F5F5]">
-        <aside class="w-[100%]  md:w-3xl md: h-full">
+        <aside class="w-full  md:w-3xl ">
             <div id="default-carousel" class="relative w-full" data-carousel="static">
     <!-- Carousel wrapper -->
-    <div class="relative overflow-hidden h-[450px] ">
+    <div class="relative overflow-hidden h-[500px] ">
          {autoresArray.map((autor) => {
                 return (
                 <AutoresCard 
@@ -45,7 +47,8 @@ const tecnologiasArray = Object.entries(data.tecnologias);
                         nombre: autor.autor,
                         programa: autor.programa,
                         modalidad: autor.modalidad,
-                        imagen: autor.img_autor
+                        imagen: autor.img_autor,
+                        redes: autor.social,
                     }}
                 />
                 );
@@ -65,7 +68,7 @@ const tecnologiasArray = Object.entries(data.tecnologias);
         
     </div>
     <!-- Slider controls -->
-    <button type="button" class="hidden absolute top-0 start-0 z-30 sm:flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+    <button type="button" class="absolute top-0 -start-10 sm:start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
         <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-transparent">
             <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180 transition-all duration-300 ease-in-out 
          hover:scale-110  
@@ -75,7 +78,7 @@ const tecnologiasArray = Object.entries(data.tecnologias);
             <span class="sr-only">Previous</span>
         </span>
     </button>
-    <button type="button" class="absolute top-0 end-0 z-30 sm:flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none  hidden" data-carousel-next>
+    <button type="button" class="absolute top-0 -end-10 md:end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
         <span class="inline-flex items-center justify-center w-10 h-10">
             <svg class="transition-all duration-300 ease-in-out 
          hover:scale-110  
