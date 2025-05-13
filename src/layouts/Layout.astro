@@ -1,20 +1,31 @@
 ---
-import '../styles/global.css'
+import '../styles/global.css';
 import '@fontsource-variable/montserrat';
+const { title } = Astro.props;
+import { ClientRouter } from 'astro:transitions';
 ---
 <!doctype html>
-<html lang="en" class=" font-montserrat scroll-smooth" >
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>SoftLab</title>
-	</head>
-	<body>
-		<slot />
-		<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-		<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-	</body>
+<html lang="en" class="font-montserrat scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Softlab - {title}</title>
+
+    <!-- Astro Transitions -->
+    <ClientRouter />
+
+    <!-- Flowbite -->
+    <script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+  </head>
+
+  <body>
+    <slot />
+
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  </body>
 </html>
-<script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>

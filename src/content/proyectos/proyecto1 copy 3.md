@@ -2,7 +2,7 @@
 autores:
     autor1:
         img_autor: persona.jpg
-        autor: 5 Alejandro Cañar Muñoz
+        autor: 2 Alejandro Cañar Muñoz
         programa: Ingenieria de software
         modalidad: registro de software
         social:
