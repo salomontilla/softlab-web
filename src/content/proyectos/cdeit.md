@@ -26,8 +26,8 @@ autores:
         programa: Ingenieria de software
         modalidad: Registro de software
         social:
-            logo_lk_white: https://co.linkedin.com/in/victor-guacheta-1504799b?    
- trk=public_profile_browsemap 
+            logo_lk_white: "https://co.linkedin.com/in/victor-guacheta-1504799btrk=public_profile_browsemap"
+ 
         
 img_producto: cedeit.jpg
 nombre_producto: Nombre del producto
