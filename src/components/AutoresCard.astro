@@ -18,7 +18,7 @@ const redesArray = Object.entries(redes || {});
 ---
 
 <div class="flex flex-col items-center justify-items-star w-full h-full text-[#1B4583] gap-y-6 align-middle text-center duration-700 ease-in-out" data-carousel-item>
-  <img src={`/softlab-web/src/assets/authors/${imagen}`} alt="Imagen del autor" class="w-24 h-24 aspect-square rounded-full mb-4" loading="lazy" />
+  <img src={`/softlab-web/src/assets/authors/${imagen}`} alt="Imagen del autor" class="w-24 h-24 rounded-full mb-4"  />
   <p class="text-lg font-bold">{nombre}</p>
   <p class="text-lg font-bold">Programa</p>
   <p>{programa}</p>
@@ -32,7 +32,7 @@ const redesArray = Object.entries(redes || {});
         rel="noopener noreferrer"
         class="text-amber-400 font-bold text-lg  cursor-pointer"
       >
-        <img class="hover:scale-110 transition-all duration-200 ease-in-out w-10 h-auto inline-block mx-2 object-contain" src={`/softlab-web/logos/social/${logo}.svg`} alt={`${logo}`} />
+        <img class="hover:scale-110 transition-all duration-200 ease-in-out w-14 h-auto inline-block mx-2 object-contain" src={`/softlab-web/logos/social/${logo}.svg`} alt={`${logo}`} />
       </a>
     ))}
   </div>
