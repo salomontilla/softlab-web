@@ -31,3 +31,6 @@ tecnologias:
     flutter: logo_flutter.svg
 
 ---
+Esta aplicación interactiva permite calcular y visualizar fuerzas eléctricas que actúan sobre una carga puntual, ofreciendo una experiencia tridimensional orientada al aprendizaje de conceptos fundamentales de la electrostática. Entre sus funcionalidades principales se incluyen el **cálculo de fuerzas individuales y resultantes** en tres configuraciones espaciales —lineal, triángulo rectángulo y triángulo equilátero—, la *simulación 3D* de interacciones entre cargas positivas y negativas, así como la **animación del vector de fuerza resultante***, mostrando su dirección e intensidad en tiempo real. Además, la herramienta proporciona representaciones visuales de conceptos clave como los **prefijos métricos** (micro, nano, kilo, etc.), los *valores de carga en Coulombs** y la **ubicación de elementos en los cuadrantes del plano cartesiano**. Esta aplicación está diseñada como un recurso educativo que facilita la comprensión de la **Ley de Coulomb** y del **principio de superposición de fuerzas** en sistemas de cargas distribuidas.
+
+

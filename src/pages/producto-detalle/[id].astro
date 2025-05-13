@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 
 import AutoresCard from "../../components/AutoresCard.astro";
 import Layout from "../../layouts/Layout.astro";
@@ -19,6 +19,8 @@ const { proyecto } = Astro.props;
 const { slug, data } = proyecto;
 const autoresArray = Object.values(data.autores);
 const tecnologiasArray = Object.entries(data.tecnologias);
+
+const {Content} = await render(proyecto);
 
 
 ---
@@ -91,7 +93,7 @@ const tecnologiasArray = Object.entries(data.tecnologias);
 </div> 
         </aside>
             
-        <div class="w-full min-h-full flex flex-col items-start justify-items-start gap-4 py-3 text-[#1B4583] ">
+        <div class="w-full min-h-full flex flex-col items-start justify-items-start gap-4 py-3 text-[#1B4583]">
             <h2 class="font-bold text-2xl">Fecha de registro</h2>
             <p>{new Date(data.fecha).toLocaleDateString('es-CO', {
             day: 'numeric',
@@ -111,7 +113,9 @@ const tecnologiasArray = Object.entries(data.tecnologias);
                 }
             </div>
             <h2 class="font-bold text-2xl">Descripción</h2>
-            <p>{data.descripcion}</p>
+            <div class="prose max-w-full">
+                <p ><Content/></p>
+            </div>
         </div>
     </section>
     <Footer/>
