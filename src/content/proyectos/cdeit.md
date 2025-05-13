@@ -30,8 +30,8 @@ autores:
  
         
 img_producto: cedeit.jpg
-nombre_producto: Nombre del producto
-descripcion: La Plataforma CEDEIT es una herramienta digital especialmente diseñada para ofrecer         información detallada y actualizada sobre los diversos programas académicos ofrecidos por las        instituciones CEDEIT, CETFOC IMPACTO AL MUNDO.
+nombre_producto: img_ejemplo.jpg
+descripcion: La Plataforma CEDEIT es una herramienta digital especialmente diseñada para ofrecer información detallada y actualizada sobre los diversos programas académicos ofrecidos por las instituciones CEDEIT, CETFOC IMPACTO AL MUNDO.
 fecha: 2024-04-23
 tecnologias:
     laravel: logo_laravel.svg
