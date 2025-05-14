@@ -29,8 +29,8 @@ autores:
             logo_lk_white: "https://co.linkedin.com/in/victor-guacheta-1504799btrk=public_profile_browsemap"
  
         
-img_producto: cedeit.jpg
-nombre_producto: img_ejemplo.jpg
+img_producto: img_ejemplo.jpg
+nombre_producto: CEDEIT
 descripcion: La Plataforma CEDEIT es una herramienta digital especialmente diseñada para ofrecer información detallada y actualizada sobre los diversos programas académicos ofrecidos por las instituciones CEDEIT, CETFOC IMPACTO AL MUNDO.
 fecha: 2024-04-23
 tecnologias:

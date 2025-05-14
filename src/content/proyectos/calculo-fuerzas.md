@@ -25,7 +25,7 @@ descripcion: La app calcula fuerzas eléctricas individuales y resultantes sobre
     interacción entre cargas positivas y negativas. Anima el movimiento del vector
     de fuerza resultante y muestra información sobre prefijos, valores en
     Coulombs y los cuadrantes del plano cartesiano.
-fecha: 2024-09-12
+fecha: 2025-04-07
 tecnologias:
     dart: logo_dart.svg
     flutter: logo_flutter.svg
