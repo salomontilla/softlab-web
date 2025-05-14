@@ -23,54 +23,37 @@ npm create astro@latest
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
-# 🎨 Instalación de Tailwind CSS + Montserrat en Astro
-```bash
-npm install -D tailwindcss
-npm install @fontsource-variable/montserrat
-```
-## En el archivo global.css
-```bash
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-## En el archivo donde quieras usar tailwind
-```bash
-import './src/styles/global.css'
-```
-## En el global.css para usar la fuente
-```bash
-@theme{
-    --font-montserrat: 'Montserrat Variable', sans-serif;
-}
-```
-
 
 ## 🚀 Estructura del proyecto
-
 ```
 softlab/
 ├── public/
-│   └── logos/               # Archivos estáticos: logos, imágenes, íconos, etc.
-│
+│   ├── img/                          # Imágenes públicas generales
+│   └── logos/
+│       ├── base/                     # Logos base del branding
+│       ├── social/                   # Íconos/redes sociales
+│       └── techs/                    # Logos de tecnologías usadas
+├── src/
+│   ├── assets/
+│   │   ├── authors/                  # Recursos relacionados con autores
+│   │   ├── base/                     # Recursos base compartidos
+│   │   └── products/                 # Imágenes y datos relacionados a productos
+│   ├── components/                   # Componentes reutilizables de la interfaz
+│   │   ├── Contacto.astro            # Sección de contacto final
+│   │   ├── Cta.astro                 # Call to Action fuerte al final de la página
+│   │   ├── Footer.astro              # Footer principal con enlaces y datos
+│   │   ├── Header.astro              # Encabezado con navegación principal
+│   │   ├── Hero.astro                # Sección inicial (Hero principal)
+│   │   ├── HeroCard.astro            # Tarjetas informativas dentro del Hero o valores
+│   │   ├── ProjectCard.astro         # Tarjeta individual de proyecto destacado
+│   │   └── Proyectos.astro           # Contenedor para la galería de proyectos
+│   ├── layouts/
+│   │   └── Layout.astro              # Layout base que estructura la página (header/footer global)
+│   └── pages/
+│       ├── index.astro               # Página principal del sitio (landing page)
+│       ├── productos/               # Página de listado de productos
+│       └── producto-detalle/        # Página individual para detalle de producto
 ├── styles/
-│   └── global.css           # Estilos globales del sitio
-│
-├── components/              # Componentes reutilizables de la interfaz
-│   ├── Contacto.astro       # Sección de contacto final
-│   ├── Cta.astro            # Call to Action fuerte al final de la página
-│   ├── Footer.astro         # Footer principal con enlaces y datos
-│   ├── Header.astro         # Encabezado con navegación principal
-│   ├── Hero.astro           # Sección inicial (Hero principal)
-│   ├── HeroCard.astro       # Tarjetas informativas dentro del Hero o valores
-│   ├── ProjectCard.astro    # Tarjeta individual de proyecto destacado
-│   └── Proyectos.astro      # Contenedor para la galería de proyectos
-│
-├── layouts/
-│   └── Layout.astro         # Layout base que estructura la página (header/footer global)
-│
-├── pages/
-│   └── index.astro          # Página principal del sitio (landing page)
-│
-└── README.md (o documentación)
+│   └── global.css                    # Estilos globales del sitio
+└── README.md                         # Documentación principal del proyecto
 ```
