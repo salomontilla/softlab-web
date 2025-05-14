@@ -45,8 +45,10 @@ const fecha = new Date(fechaString.getFullYear(),(fechaString.getMonth()+1),fech
         <div class="h-full absolute inset-0  bg-gradient-to-t from-blue-950 to-transparent z-0">
         </div>
         <Navbar/>
-        <a class="absolute left-6 bottom-4 md:top-6 font-light text-base md:text-lg underline hover:scale-101 transition-all duration-300 ease-in-out cursor-pointer " href="/softlab-web/productos/1">← Volver</a>
-        <h1 class="text-2xl text-bold z-10">{data.nombre_producto}</h1>
+        <a data-astro-reload class="absolute left-6 bottom-4 md:top-6 font-light text-base md:text-lg underline hover:scale-101 transition-all duration-300 ease-in-out cursor-pointer " href="/softlab-web/productos/1">← Volver</a>
+        <div class="w-[120px] sm:w-full z-10">
+            <h1 class="text-2xl text-bold z-10">{data.nombre_producto}</h1>
+        </div>
     </header>
     <section  class="w-full h-full flex items-start relative flex-col md:flex-row justify-center gap-4 p-8 bg-[#F5F5F5]">
         <aside class="w-full  md:w-3xl ">

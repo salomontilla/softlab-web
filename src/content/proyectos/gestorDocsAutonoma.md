@@ -29,7 +29,7 @@ autores:
         social:
         
 img_producto: gestorDocsAutonoma.png
-nombre_producto: GestorDocsAutonoma
+nombre_producto: Gestor Docs Autonoma
 descripcion: GestorDocsAutonoma es una aplicación diseñada para facilitar la gestión de documentos para la facultad de ingeniería de la Autónoma del Cauca, optimizando el manejo y organización de la información académica.
 fecha: 2024-09-29
 tecnologias:
