@@ -24,10 +24,10 @@ nombre_producto: SilvoTech
 descripcion: El desarrollo del software SilvoTech busca ayudar a los pequeños productores ganaderos y campesinos, en la implementación del sistema silvopastoril en su finca, mejorar las prácticas ganaderas y promover la protección ambiental. La estructuración del código fuente en base a arquitecturas que fomenten la vida útil y mantenimiento del software
 fecha: 2024-08-27
 tecnologias:
-    java: logo_java.svg
-    html: logo_html.svg
+    php: logo_php.svg
     laravel: logo_laravel.svg
-    css: logo_css.svg
+    kotlin: logo_kotlin.svg
+    mariaDb: logo_mariadb.svg
 
 ---
 <p>La plataforma web de <strong>SilvoTech</strong> está desarrollada en <strong>PHP</strong> utilizando el framework <strong>Laravel 8</strong>, y emplea <strong>MariaDB</strong> como sistema de gestión de base de datos relacional. Esta configuración permite establecer un <strong>canal de comunicación con la aplicación móvil</strong>. El sistema se aloja en un <strong>hosting privado</strong> proporcionado por la empresa <strong>Hostinger</strong>.</p>
