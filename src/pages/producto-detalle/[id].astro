@@ -52,58 +52,59 @@ const fecha = new Date(fechaString.getFullYear(),(fechaString.getMonth()+1),fech
     </header>
     <section  class="w-full h-full flex items-start relative flex-col md:flex-row justify-center gap-4 p-8 bg-[#F5F5F5]">
         <aside class="w-full  md:w-3xl ">
-            <div id="default-carousel" class="relative w-full" data-carousel="static">
-    <!-- Carousel wrapper -->
-    <div class="relative overflow-hidden h-[500px] ">
-         {autoresArray.map((autor) => {
-                return (
-                <AutoresCard 
-                    author={{
-                        nombre: autor.autor,
-                        programa: autor.programa,
-                        modalidad: autor.modalidad,
-                        imagen: autor.img_autor,
-                        redes: autor.social,
-                    }}
-                />
-                );
-              })}
-    </div>
-    <!-- Slider indicators -->
-    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-    
-        {
-            autoresArray.map((_, index) => {
-                return (
-                    <button type="button" class="w-3 h-3 rounded-full" aria-current={index === 0 ? "true" : "false"} aria-label={`Slide ${index + 1}`} data-carousel-slide-to={index}></button>
-                )
-            })
-        }
-        
-        
-    </div>
-    <!-- Slider controls -->
-    <button type="button" class="absolute top-0 -start-10 sm:start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-transparent">
-            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180 transition-all duration-300 ease-in-out 
-         hover:scale-110  
-         hover:shadow-lg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-            </svg>
-            <span class="sr-only">Previous</span>
-        </span>
-    </button>
-    <button type="button" class="absolute top-0 -end-0  z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-        <span class="inline-flex items-center justify-center w-10 h-10">
-            <svg class="transition-all duration-300 ease-in-out 
-         hover:scale-110  
-         hover:shadow-lg w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-            </svg>
-            <span class="sr-only">Next</span>
-        </span>
-    </button>
-</div> 
+            <!-- Carousel -->
+            <div id="default-carousel" class="relative w-full" data-carousel="slide">
+                <!-- Carousel wrapper -->
+                <div class="relative overflow-hidden h-[500px] ">
+                    {autoresArray.map((autor) => {
+                            return (
+                            <AutoresCard 
+                                author={{
+                                    nombre: autor.autor,
+                                    programa: autor.programa,
+                                    modalidad: autor.modalidad,
+                                    imagen: autor.img_autor,
+                                    redes: autor.social,
+                                }}
+                            />
+                            );
+                        })}
+                </div>
+                <!-- Slider indicators -->
+                <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+                
+                    {
+                        autoresArray.map((_, index) => {
+                            return (
+                                <button type="button" class="w-3 h-3 rounded-full" aria-current={index === 0 ? "true" : "false"} aria-label={`Slide ${index + 1}`} data-carousel-slide-to={index}></button>
+                            )
+                        })
+                    }
+
+                </div>
+                
+                <!-- Slider controls -->
+                <button type="button" class="absolute top-0 -start-10 sm:start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-transparent">
+                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180 transition-all duration-300 ease-in-out 
+                    hover:scale-110  
+                    hover:shadow-lg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                        <span class="sr-only">Previous</span>
+                    </span>
+                </button>
+                <button type="button" class="absolute top-0 -end-0  z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                    <span class="inline-flex items-center justify-center w-10 h-10">
+                        <svg class="transition-all duration-300 ease-in-out 
+                    hover:scale-110  
+                    hover:shadow-lg w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                        <span class="sr-only">Next</span>
+                    </span>
+                </button>
+            </div> 
         </aside>
             
         <div class="w-full min-h-full flex flex-col items-start justify-items-start gap-4 py-3 text-[#1B4583]">
