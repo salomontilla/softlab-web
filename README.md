@@ -47,6 +47,8 @@ softlab/
 │   │   ├── HeroCard.astro            # Tarjetas informativas dentro del Hero o valores
 │   │   ├── ProjectCard.astro         # Tarjeta individual de proyecto destacado
 │   │   └── Proyectos.astro           # Contenedor para la galería de proyectos
+|   |──  content/
+|   |     ├──proyectos/
 │   ├── layouts/
 │   │   └── Layout.astro              # Layout base que estructura la página (header/footer global)
 │   └── pages/
